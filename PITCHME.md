@@ -31,8 +31,8 @@
 选择：
 
 ---
-docker swarm mode架构
-===
+#### docker swarm mode架构
+
 <div align="center">
 <img width="100%" src="http://ww1.sinaimg.cn/large/b433eefdgy1fhcwc18ezmj20j308vmyk.jpg"/>
 </div>
