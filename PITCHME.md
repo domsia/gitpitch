@@ -1,25 +1,100 @@
 
+---
+<center>dask 分布式建模平台</center>
+===
+
+<div style="text-align:right">
+<a  href="10.22.64.81:8888">10.22.64.81:8888</a>
+</div>
 
 
+---
+目的
+==
+-  提高建模的效率
+-  处理大数据量
+> 分布式的优势
+---
+技术
+===
+**k8s**
+> 主流的大数  
 
+**mesos**
+> apache
 
+**docker swarm** 
+> docker自有的解决方案
+> 特点：
+> 
 
+选择：
 
+---
+docker swarm mode架构
+===
+<div align="center">
+<img width="100%" src="http://ww1.sinaimg.cn/large/b433eefdgy1fhcwc18ezmj20j308vmyk.jpg"/>
+</div>
 
+---
 
+<div align="center">
+<image  width="56%" src="http://ww1.sinaimg.cn/large/b433eefdgy1fhiiri9sqtj20k30qxwgw.jpg"/></div>
 
+集群结构：[http://10.22.64.81:8089/](http://10.22.64.81:8089/)
 
+---
+建模平台结构图
+===
 
+<div align="center">
+<img width="100%" src="http://ww1.sinaimg.cn/large/b433eefdgy1fhihv676naj20hr090dg8.jpg"/>
+</div>
 
+---
+##  dask searchcv demo
+```python
+from dask.distributed import Client
+client = Client('10.0.0.3:8786')
 
+from sklearn.datasets import load_digits
+from sklearn.svm import SVC
 
+# Fit with dask-searchcv
+from dask_searchcv import GridSearchCV
 
+## Fit with scikit-learn
+#from sklearn.model_selection import GridSearchCV
+
+param_space = {'C': [1e-4, 1, 1e4],
+               'gamma': [1e-3, 1, 1e3],
+               'class_weight': [None, 'balanced']}
+
+model = SVC(kernel='rbf')
+digits = load_digits()
+
+search = GridSearchCV(model, param_space, cv=3)
+search.fit(digits.data, digits.target)
+search.visualize("search_graph", "png")
+```
+---
+###  [`searchcv execute graph`](https://10.22.64.85:8888/files/mydask/search_graph.svg)
+
+<div align="center">
+<img width="75%" src="http://ww1.sinaimg.cn/large/b433eefdgy1fhijhn8it3j21b717v456.jpg"/>
+</div>
+
+---
 
 
 
 
 ---
-Marp
+
+
+---
+test
 ===
 
 # ![](images/marp.png)
