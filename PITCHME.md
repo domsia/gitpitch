@@ -1,5 +1,4 @@
 
----
 <center>dask分布式建模平台</center>
 ===
 
@@ -9,11 +8,11 @@
 
 
 ---
-#### 目标
+### 目标
 
 -  提高建模的效率
 -  处理大数据量
--  尽量与当前建模代码提供一致的接口
+-  与当前建模代码提供基本一致的接口
 
 ---
 #### 容器集群技术 docker swarm
@@ -33,7 +32,7 @@
 <img width="100%" src="http://ww1.sinaimg.cn/large/b433eefdgy1fhcwc18ezmj20j308vmyk.jpg"/>
 </div>
 
- >  `data: nfs`  `network: overlay` `log: fluentd`
+`data: nfs`  `network: overlay` `log: fluentd`
 
 ---
 
@@ -50,6 +49,8 @@
 <div align="center">
 <img width="100%" src="http://ww1.sinaimg.cn/large/b433eefdgy1fhihv676naj20hr090dg8.jpg"/>
 </div>
+
+[monitor]("10.0.0.3:8787")
 
 ---
 #####  dask searchcv demo
@@ -85,10 +86,6 @@ search.visualize("search_graph", "png")
 </div>
 
 ---
-#### 一些bentchmark
 
 
-
-
----
 
