@@ -16,8 +16,9 @@
 
 ---
 #### 容器集群技术 docker swarm
-
+<div align="left">
 相对于k8s，mesos等方案，docker swarm在我们的场景中有以下优势：
+</div> 
 
 - docker Swarm和Docker环境很好的结合在一起
 - Swarm 比较轻量，并且提供了很多的驱动，能够和其他的集群解决方案一起工作
@@ -50,7 +51,7 @@
 <img width="100%" src="http://ww1.sinaimg.cn/large/b433eefdgy1fhihv676naj20hr090dg8.jpg"/>
 </div>
 
-[monitor]("10.0.0.3:8787")
+[monitor]("http://10.0.0.3:8787")
 
 ---
 #####  dask searchcv demo
